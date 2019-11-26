@@ -12,6 +12,8 @@ public class Pointer : MonoBehaviour
     public LayerMask m_InteractableMask = 0;
     public UnityAction<Vector3, GameObject> OnPointerUpdate = null;
 
+    private SimpleShoot simpleShoot;
+
     private Transform m_CurrentOrigin = null;
     private GameObject m_CurrentObject = null;
 
@@ -115,6 +117,7 @@ public class Pointer : MonoBehaviour
 
         Interactable interactable = m_CurrentObject.GetComponent<Interactable>();
         interactable.Pressed();
+        simpleShoot.TriggerShoot();
     }
 
 }
